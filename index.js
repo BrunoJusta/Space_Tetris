@@ -12,6 +12,7 @@ let leftKey = false;
 let downKey = false;
 let upKey = false;
 
+let rotation = 0
 
 class TetrisPiece {
     constructor(type) {
@@ -24,7 +25,7 @@ class TetrisPiece {
         this.x4 = 0
         this.y4 = 0
         this.type = type;
-        this.config = 0;
+        this.config = rotation;
         this.stopped = false;
         this.color = ""
     }
@@ -34,15 +35,30 @@ class TetrisPiece {
         console.log(this.type)
         switch (this.type) {
             case 0:
-                this.x1 = W / 2 - squareSize * 2
-                this.y1 = initialPos
-                this.x2 = this.x1 + squareSize
-                this.y2 = initialPos
-                this.x3 = this.x2 + squareSize
-                this.y3 = initialPos
-                this.x4 = this.x3 + squareSize
-                this.y4 = initialPos
-                this.color = "#145C9E"
+                if(this.config == 0){
+                    this.x1 = W / 2 - squareSize * 2
+                    this.y1 = initialPos
+                    this.x2 = this.x1 + squareSize
+                    this.y2 = initialPos
+                    this.x3 = this.x2 + squareSize
+                    this.y3 = initialPos
+                    this.x4 = this.x3 + squareSize
+                    this.y4 = initialPos
+                    this.color = "#145C9E"
+                }
+                else{
+                    this.x1 = W / 2 - squareSize * 2
+                    this.y1 = initialPos
+                    this.x2 = this.x1
+                    this.y2 = initialPos + 20
+                    this.x3 = this.x1
+                    this.y3 = initialPos + 40
+                    this.x4 = this.x1
+                    this.y4 = initialPos + 60
+                    this.color = "#145C9E"
+
+                }
+              
                 break;
 
             case 1:
@@ -178,7 +194,6 @@ p[p.length - 1].initPiece();
 
 
 
-
 //ANIMATION CYCLE
 function render() {
     //erases Canvas
@@ -197,11 +212,16 @@ function render() {
     if (leftKey)
         x--; //UPDATE BALL
     if (upKey)
-        y--; //UPDATE BALL
+        rotation +=1
+        if(rotation >= 3){
+            rotation = 0
+        }
     if (downKey)
         y++; //UPDATE BALL
 
     //new frame
+console.log(rotation)
+
 
 }
 window.setInterval(render, 300)
