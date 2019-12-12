@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "archivoBlack";
+    src: url("/Endless\ Boss\ Battle.ttf");
+}
+
+html,
+body {
+    color: white;
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+    background-image: url('./d2b7m7v-6f04f2da-dd8e-4783-b801-d7b0137dfdff.jpg');
+    background-color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: -3;
+    height: 100%;
+
+
+}
+
+.logo{
+    padding-top: 50px;
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 200px;
+    
+}
+#myCanvas{
+    display: block;
+    margin: auto;
+    height: auto;
+    border: 1px solid white;
+    background-color: black;
+    
+}
+
+
+#master2{
+    margin-right: -1px;
+    margin-top: -545px;
+    margin-left: auto;
+}
+
+#nxtPiece{
+    display: block;
+    margin-left: auto;
+    margin-right: 370px;
+    width: 150px;
+    height: 150px;
+}
+
+
+
+#piece{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    border: 1px solid white;
+    background-color: black;
+}
+
+p{
+   text-align: center;
+   font-family: archivoBlack;
+}
+
