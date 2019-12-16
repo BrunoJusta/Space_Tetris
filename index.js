@@ -35,30 +35,18 @@ class TetrisPiece {
         console.log(this.type)
         switch (this.type) {
             case 0:
-                if(this.config == 0){
-                    this.x1 = W / 2 - squareSize * 2
-                    this.y1 = initialPos
-                    this.x2 = this.x1 + squareSize
-                    this.y2 = initialPos
-                    this.x3 = this.x2 + squareSize
-                    this.y3 = initialPos
-                    this.x4 = this.x3 + squareSize
-                    this.y4 = initialPos
-                    this.color = "#145C9E"
-                }
-                else{
-                    this.x1 = W / 2 - squareSize * 2
-                    this.y1 = initialPos
-                    this.x2 = this.x1
-                    this.y2 = initialPos + 20
-                    this.x3 = this.x1
-                    this.y3 = initialPos + 40
-                    this.x4 = this.x1
-                    this.y4 = initialPos + 60
-                    this.color = "#145C9E"
 
-                }
-              
+                this.x1 = W / 2 - squareSize * 2
+                this.y1 = initialPos
+                this.x2 = this.x1 + squareSize
+                this.y2 = initialPos
+                this.x3 = this.x2 + squareSize
+                this.y3 = initialPos
+                this.x4 = this.x3 + squareSize
+                this.y4 = initialPos
+                this.color = "#145C9E"
+
+
                 break;
 
             case 1:
@@ -144,18 +132,10 @@ class TetrisPiece {
         ctx.beginPath();
         ctx.strokeStyle = "#ffffff";
         ctx.fillStyle = this.color;
-        if (!this.stopped) {
-            ctx.rect(this.x1, this.y1, squareSize, squareSize);
-            ctx.rect(this.x2, this.y2, squareSize, squareSize)
-            ctx.rect(this.x3, this.y3, squareSize, squareSize);
-            ctx.rect(this.x4, this.y4, squareSize, squareSize);
-        } else {
-            ctx.rect(this.x1, 480, squareSize, squareSize);
-            ctx.rect(this.x2, 480, squareSize, squareSize)
-            ctx.rect(this.x3, 480, squareSize, squareSize);
-            ctx.rect(this.x4, 480, squareSize, squareSize);
-        }
-
+        ctx.rect(this.x1, this.y1, squareSize, squareSize);
+        ctx.rect(this.x2, this.y2, squareSize, squareSize)
+        ctx.rect(this.x3, this.y3, squareSize, squareSize);
+        ctx.rect(this.x4, this.y4, squareSize, squareSize);
         ctx.fill();
         ctx.stroke();
 
@@ -165,28 +145,142 @@ class TetrisPiece {
     }
 
     update() {
-        this.y1 += 20;
-        this.y2 += 20;
-        this.y3 += 20;
-        this.y4 += 20;
 
-        if (this.y1 + 20 == H) {
-            this.stopped = true; //flags icecream to stop
+        if (this.y1 + 20 == H || this.y2 + 20 == H || this.y3 + 20 == H || this.y4 + 20 == H) {
+            this.stopped = true;
+        } else {
+            this.y1 += 20;
+            this.y2 += 20;
+            this.y3 += 20;
+            this.y4 += 20;
         }
-        if (this.y2 + 20 == H) {
-            this.stopped = true; //flags icecream to stop
+    }
+
+    rotate() {
+        if (this.type == 0) {
+            if (this.config == 0) {
+                this.x1 = this.x2
+                this.y1 = this.y2 - 20
+                this.x3 = this.x2
+                this.y3 = this.y2 + 20
+                this.x4 = this.x2
+                this.y4 = this.y2 + 40
+                this.config = 1
+            } else {
+
+                this.x1 = this.x2 - squareSize
+                this.y1 = this.y2
+                this.x3 = this.x2 + squareSize
+                this.y3 = this.y2
+                this.x4 = this.x2 + 2 * squareSize
+                this.y4 = this.y2
+                this.config = 0
+
+            }
         }
-        if (this.y3 + 20 == H) {
-            this.stopped = true; //flags icecream to stop
+        if (this.type == 1) {
+            if (this.config == 0) {
+                this.x1 = this.x2
+                this.y1 = this.y2 - 20
+                this.x3 = this.x2
+                this.y3 = this.y2 + 20
+                this.x4 = this.x3 - 20
+                this.y4 = this.y3
+                this.config = 1
+            } else if (this.config == 1) {
+                this.x1 = this.x2 - squareSize
+                this.y1 = this.y2
+                this.x3 = this.x2 + squareSize
+                this.y3 = this.y2
+                this.x4 = this.x1
+                this.y4 = this.y2 - 20
+                this.config = 2
+
+            } else if (this.config == 2) {
+                this.x1 = this.x2
+                this.y1 = this.y2 - 20
+                this.x3 = this.x2
+                this.y3 = this.y2 + 20
+                this.x4 = this.x3 + 20
+                this.y4 = this.y1
+                this.config = 0
+
+            }
         }
-        if (this.y4 + 20 == H) {
-            this.stopped = true; //flags icecream to stop
+        if (this.type == 2) {
+            if (this.config == 0) {
+                this.x1 = this.x2
+                this.y1 = this.y2 - 20
+                this.x3 = this.x2
+                this.y3 = this.y2 + 20
+                this.x4 = this.x3 - 20
+                this.y4 = this.y1
+                this.config = 1
+            } else if (this.config == 1) {
+                this.x1 = this.x2 - squareSize
+                this.y1 = this.y2
+                this.x3 = this.x2 + squareSize
+                this.y3 = this.y2
+                this.x4 = this.x3
+                this.y4 = this.y1 - 20
+                this.config = 2
+
+            } else if (this.config == 2) {
+                this.x1 = this.x2
+                this.y1 = this.y2 - 20
+                this.x3 = this.x2
+                this.y3 = this.y2 + 20
+                this.x4 = this.x3 + 20
+                this.y4 = this.y3
+                this.config = 0
+
+            }
+        }
+        if (this.type == 4) {
+            if (this.config == 0) {
+                this.x1 = this.x2
+                this.y1 = this.y2 +20
+                this.x3 = this.x2 +20
+                this.y3 = this.y2 +20
+                this.x4 = this.x2 +20
+                this.y4 = this.y3 +20
+                this.config = 1 
+            } 
+            else if (this.config == 1) {
+                this.x1 = this.x2 +20
+                this.y1 = this.y2 
+                this.x3 = this.x2 +20
+                this.y3 = this.y2 -20
+                this.x4 = this.x3 +20
+                this.y4 = this.y3  
+                this.config = 0
+            }
+        }
+        if (this.type == 5) {
+            if (this.config == 0) {
+                this.x1 = this.x2 
+                this.y1 = this.y2 -20
+                this.x3 = this.x2 -20
+                this.y3 = this.y2 +20
+                this.x4 = this.x2 -20
+                this.y4 = this.y3 -20
+                this.config = 1 
+            } 
+            else if (this.config == 1) {
+                this.x1 = this.x2 +20
+                this.y1 = this.y2 
+                this.x3 = this.x2 +20
+                this.y3 = this.y2 +20
+                this.x4 = this.x3 +20
+                this.y4 = this.y3  
+                this.config = 0
+            }
         }
     }
 }
 
 
-let rndPiece = Math.floor(Math.random() * 7);
+let rndPiece = 5 /*  Math.floor(Math.random() * 7); */
 let p = []
 p.push(new TetrisPiece(rndPiece));
 p[p.length - 1].initPiece();
@@ -199,65 +293,62 @@ function render() {
     //erases Canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    //draw icreams
     p.forEach(function (piece) {
         piece.draw();
 
     });
 
     p[p.length - 1].update();
-    //draw on Canvas
-    if (rightKey)
-        x++; //UPDATE BALL
-    if (leftKey)
-        x--; //UPDATE BALL
-    if (upKey)
-        rotation +=1
-        if(rotation >= 3){
-            rotation = 0
-        }
-    if (downKey)
-        y++; //UPDATE BALL
+    console.log(upKey)
 
-    //new frame
-console.log(rotation)
+    if (p[p.length - 1].stopped) {
+        rndPiece = Math.floor(Math.random() * 7);
+        p.push(new TetrisPiece(rndPiece));
+        p[p.length - 1].initPiece();
+    }
 
 
 }
-window.setInterval(render, 300)
+
+window.setInterval(render, 500)
 
 
 //handler for keydown
 function ArrowPressed(e) {
     if (e.key == 'ArrowRight') {
-        //code here
-        rightKey = true; //Canvas#2
+
+        if (p[p.length - 1].x1 <= 290 && p[p.length - 1].x2 <= 290 && p[p.length - 1].x3 <= 290 && p[p.length - 1].x4 <= 290) {
+            p[p.length - 1].x1 += 20
+            p[p.length - 1].x2 += 20
+            p[p.length - 1].x3 += 20
+            p[p.length - 1].x4 += 20
+        }
     }
     if (e.key == 'ArrowLeft') {
-        //code here
-        leftKey = true; //Canvas#2
+
+        if (p[p.length - 1].x1 >= 20 && p[p.length - 1].x2 >= 20 && p[p.length - 1].x3 >= 20 && p[p.length - 1].x4 >= 20) {
+            p[p.length - 1].x1 -= 20
+            p[p.length - 1].x2 -= 20
+            p[p.length - 1].x3 -= 20
+            p[p.length - 1].x4 -= 20
+        }
     }
+
     if (e.key == 'ArrowUp') {
-        //code here
-        upKey = true; //Canvas#2
+
+        p[p.length - 1].rotate();
+
     }
+
     if (e.key == 'ArrowDown') {
-        //code here
-        downKey = true; //Canvas#2
+
+        p[p.length - 1].y1 += 20
+        p[p.length - 1].y2 += 20
+        p[p.length - 1].y3 += 20
+        p[p.length - 1].y4 += 20
+
     }
 
 }
-//handler for keyup
-function ArrowReleased(e) {
-    if (e.key == 'ArrowRight')
-        rightKey = false; //Canvas#2
-    if (e.key == 'ArrowLeft')
-        leftKey = false; //Canvas#2
-    if (e.key == 'ArrowUp')
-        upKey = false; //Canvas#2
-    if (e.key == 'ArrowDown')
-        downKey = false; //Canvas#2
-}
-//sets handlers for events keydown & keyup
+
 window.addEventListener('keydown', ArrowPressed);
-window.addEventListener('keyup', ArrowReleased);
