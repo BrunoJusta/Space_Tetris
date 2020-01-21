@@ -1,0 +1,177 @@
+@font-face {
+    font-family: "tetris";
+    src: url("Endless\ Boss\ Battle.ttf");
+}
+
+html,
+body {
+    color: white;
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+    background-image: url('./background.jpg');
+    background-color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: -3;
+    height: 100%;
+
+
+}
+
+.againScreen{
+    position: absolute;
+    z-index: 7;
+    padding-top: 400px;
+    padding-left: 665px;  
+    justify-content: center;
+}
+
+.gameover{
+   
+   
+    font-family: tetris; 
+    color: red; 
+    display: none;
+    -webkit-animation: text-shadow-drop-center 1.7s infinite alternate-reverse both;
+    animation: text-shadow-drop-center 1.7s infinite alternate-reverse both;
+}
+
+#again{
+    background-color: transparent;
+    color: white;
+    font-family: tetris; 
+    display: none;
+    font-size: 20px;
+    padding-left: 50px;
+
+    
+}
+
+.logo {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 27%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 30px;
+}
+
+.option{
+        
+        font-family: tetris;
+        color: white;
+        font-size: 20px;
+        margin-left: 15px;
+    }
+
+#by{
+    font-family: tetris;
+    font-size: 15px;
+    padding-right: 30px;
+    float: right;
+
+}
+
+#lableU{
+    font-family: tetris;
+    font-size: 15px;
+    background-color:  rgb(24, 30, 61);
+    padding-left: 8px;
+    margin-top: -5px;
+    max-width: 89px;
+
+}
+
+
+#lableL{
+    font-family: tetris;
+    font-size: 15px;
+    background-color:  rgb(24, 30, 61);
+    padding-left: 8px;
+    margin-top: -5px;
+    max-width: 61px;
+
+}
+
+#lableP{
+    font-family: tetris;
+    font-size: 15px;
+    background-color:  rgb(24, 30, 61);
+    padding-left: 8px;
+    margin-top: -5px;
+    max-width: 61px;
+
+}
+
+#points, #lines, #username{
+    font-family: tetris;
+    font-size: 30px;
+    text-align: center;
+
+
+}
+#myCanvas, #myCanvas2 {
+    display: block;
+    margin: auto;
+    height: auto;
+    border: 1px solid white;
+    background-color:  rgb(24, 30, 61);
+    animation: glowing 5000ms infinite;
+    border-style: inherit;
+    border:dashed 5px #636db8;
+}
+
+
+#scoreContainer {
+    background-color:  rgb(24, 30, 61);
+    animation: glowing 5000ms infinite;
+    border:dashed 5px #636db8;
+    max-width: 150px;
+    max-height: 200px;
+    margin: 30px;
+    
+}
+
+
+
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 -10px #939de6;
+    }
+
+    40% {
+        box-shadow: 0 0 20px #939de6;
+    }
+
+    60% {
+        box-shadow: 0 0 20px #939de6;
+    }
+
+    100% {
+        box-shadow: 0 0 -10px #939de6;
+    }
+}
+  
+
+@-webkit-keyframes text-shadow-drop-center {
+    0% {
+      text-shadow: 0 0 0 red;
+    }
+    100% {
+      text-shadow: 0 0 18px red;
+    }
+  }
+  @keyframes text-shadow-drop-center {
+    0% {
+      text-shadow: 0 0 0 red;
+    }
+    100% {
+      text-shadow: 0 0 18px red;
+    }
+  }
+  
