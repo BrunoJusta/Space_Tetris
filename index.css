@@ -1,113 +1,170 @@
-@font-face {
-    font-family: "tetris";
-    src: url("Endless\ Boss\ Battle.ttf");
-}
-
+/* Definições da Página */
 html,
 body {
-    color: white;
-    max-width: 100%;
-    overflow-x: hidden;
-    width: 100%;
-    background-image: url('./background.jpg');
-    background-color: black;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    z-index: -3;
-    height: 100%;
-
-
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100%;
 }
 
+/* Tipo de Letra */
+@font-face {
+  font-family: "tetris";
+  src: url("Endless\ Boss\ Battle.ttf");
+}
+
+/* Svg Background */
+#backgr {
+  animation: smoothTransition 12s ease infinite;
+  background: linear-gradient(356deg, rgb(136, 41, 145),#360a73, #3f0964,#0c061e, #0c061e);
+  background-size: 600% 600%;
+  margin-top: -624px;
+  position: absolute;
+  z-index: -3;
+}
+
+/* Animaçao do Svg Background */
+@keyframes smoothTransition {
+  0% {
+    background-position: 51% 0%
+  }
+  50% {
+    background-position: 50% 100%
+  }
+  100% {
+    background-position: 51% 0%
+  }
+}
+
+/*Logo TETRIS*/
 .logo {
-    padding-top: 10px;
-    padding-bottom: 20px;
-    width: 57%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 30px;
+  margin-top: -180px;
+  width: 57%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 30px;
+}
+
+/*Letra T1*/
+.st3 {
+  transform: translateY(-150px);
+  animation: fallingLetters 0.5s ease-in forwards;
+}
+
+/*Letra E*/
+.st1 {
+  transform: translateY(-150px);
+  animation: fallingLetters 0.5s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+/*Letra T2*/
+.st4 {
+  transform: translateY(-150px);
+  animation: fallingLetters 0.5s ease-in forwards;
+  animation-delay: 1s;
+}
+
+/*Letra R*/
+.st0 {
+  transform: translateY(-150px);
+  animation: fallingLetters 0.5s ease-in forwards;
+  animation-delay: 1.5s;
+}
+
+/*Letra I*/
+.st5 {
+  transform: translateY(-150px);
+  animation: fallingLetters 0.5s ease-in forwards;
+  animation-delay: 2s;
+}
+
+/*Letra S*/
+.st2 {
+  transform: translateY(-150px);
+  animation: fallingLetters 0.5s ease-in forwards;
+  animation-delay: 2.5s;
+}
+
+/*Animação letras do logo a cair*/
+@keyframes fallingLetters {
+  0% {
+    transform: translateY(-150px);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+
+/*Container com as Opções*/
+#buttons {
+  animation: fadeIn 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation-delay: 2.8s;
+}
+
+/*Animação das opções a aparecer*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*Opções de Single Player e Multiplayer*/
+#playTxt:hover {
+  text-shadow: 0 0 18px white;
+  animation: vibration 0.3s linear infinite both;
+}
+
+/*Animação das opções a vibrar*/
+@keyframes vibration {
+  0% {
+    transform: translate(0);
+  }
+  30% {
+    transform: translate(-2px, 2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  90% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/*Bonequinhos*/
+#bitGuy {
+  animation: jello 2s ease-in-out infinite both;
+}
+
+/*Animação dos bonequinhos a mexer*/
+@keyframes jello {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 
-.col-sm-6{
-    margin-top: 150px;
-    -webkit-animation: slide-top 5s cubic-bezier(0.470, 0.000, 0.745, 0.715) infinite alternate-reverse both;
-    animation: slide-top 5s cubic-bezier(0.470, 0.000, 0.745, 0.715) infinite alternate-reverse both;
-
-}
-.option{
-margin-left: 80px;
-    font-family: tetris;
-    color: white;
-    font-size: 50px;
-    -webkit-animation: text-shadow-drop-center 1.7s infinite alternate-reverse both;
-    animation: text-shadow-drop-center 1.7s infinite alternate-reverse both;
-   
-
-}
-
-
-#by{
-    color: white;
-    font-family: tetris;
-    font-size: 15px;
-    padding-right: 30px;
-    float: right;
-    padding-top: 200px;
-}
-
-@-webkit-keyframes text-shadow-drop-center {
-    0% {
-      text-shadow: 0 0 0 #939de6;
-    }
-    100% {
-      text-shadow: 0 0 18px #939de6;
-    }
-  }
-  @keyframes text-shadow-drop-center {
-    0% {
-      text-shadow: 0 0 0 #939de6;
-    }
-    100% {
-      text-shadow: 0 0 18px #939de6;
-    }
-  }
-  
-  @-webkit-keyframes slide-top {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(-30px);
-              transform: translateY(-30px);
-    }
-  }
-  @keyframes slide-top {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(-30px);
-              transform: translateY(-30px);
-    }
-  }
-  
-
-  
-.st3:hover{
-    transition: all 2s ease-in;
-    transform: translate(111px, 0px);
-  }
-
-  svg circle:hover:first-child ~ circle{
-    transition: all 2s ease-in;
-    transition-delay: 1.9s;
-    transform: translate(111px, 0px);
-
-
-  }

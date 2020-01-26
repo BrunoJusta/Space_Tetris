@@ -1,98 +1,163 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>TETRIS</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="./favicon-32x32.png">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="container ">
-       <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg class="logo" version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 519.32 200.68" style="enable-background:new 0 0 519.32 200.68;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#AAD922;}
-	.st1{fill:#F15025;}
-	.st2{fill:#AB5AD1;}
-	.st3{fill:#D8315B;}
-	.st4{fill:#FCBA03;}
-	.st5{fill:#3DD6D0;}
-	.st6{fill:#FFFFFF;}
-</style>
-<g>
-	<g>
-		<path class="st0" d="M371.82,34.21c-4.22,6.87-8.43,13.75-12.68,20.61c-4.89,7.89-9.82,15.76-14.72,23.64
+<head>
+	<title>TETRIS</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="./favicon-32x32.png">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="./index.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<!-- Titulo TETRIS -->
+	<div class="container " style="margin:auto;">
+		<svg class="logo" id="Camada_1" x="0px" y="0px" viewBox="0 0 519.32 200.68" height="500">
+			<style type="text/css">
+				.st0 {fill: #AAD922;} 
+				.st1 {fill: #F15025;}
+				.st2 {fill: #AB5AD1;}
+				.st3 {fill: #D8315B;}
+				.st4 {fill: #FCBA03;}
+				.st5 {fill: #3DD6D0;}
+			</style>
+			<g>
+				<g>
+					<!-- Letra R -->
+					<path class="st0" d="M371.82,34.21c-4.22,6.87-8.43,13.75-12.68,20.61c-4.89,7.89-9.82,15.76-14.72,23.64
 			c-0.39,0.62-0.73,1.27-1.35,2.35c3.84,0,7.31,0.12,10.77-0.05c1.91-0.09,2.8,0.57,3.63,2.08c18.55,33.48,37.15,66.93,55.74,100.4
 			c0.36,0.64,0.65,1.31,1.08,2.17c-0.91,0.05-1.59,0.12-2.27,0.12c-12.24,0.01-24.47-0.02-36.71,0.04c-1.63,0.01-2.51-0.4-3.28-1.81
 			c-18.36-33.15-36.78-66.27-55.19-99.39c-0.36-0.65-0.77-1.27-1.58-1.86c0,34.23,0,68.45,0,102.85c-11.94,0-23.58,0-35.59,0
 			c0-50.35,0-100.75,0-151.15C310.38,34.21,341.1,34.21,371.82,34.21z M330.31,57.36c-5.27,0-10.15,0-15.1,0c0,7.8,0,15.44,0,23.08
-			c0.2,0.07,0.39,0.14,0.59,0.2"/>
-		<path class="st1" d="M188.46,34.21c-6.18,10.1-12.4,20.17-18.51,30.31c-0.93,1.54-1.92,2.16-3.88,2.14
+			c0.2,0.07,0.39,0.14,0.59,0.2" />
+					<!-- Letra E -->
+					<path class="st1" d="M188.46,34.21c-6.18,10.1-12.4,20.17-18.51,30.31c-0.93,1.54-1.92,2.16-3.88,2.14
 			c-8.62-0.11-17.25-0.05-26.1-0.05c0,4,0,7.85,0,11.96c10.82,0,21.56,0,32.66,0c-2.36,4.67-4.55,9.01-6.75,13.34
 			c-2.1,4.15-4.26,8.27-6.29,12.45c-0.61,1.26-1.39,1.71-2.9,1.69c-5.5-0.09-11.01-0.03-16.73-0.03c0,15.63,0,31.03,0,46.84
 			c1.95,0,3.92-0.01,5.89,0c14.87,0.06,29.75,0.13,44.62,0.17c1.36,0,2.36,0.14,3.13,1.44c5.85,9.84,11.8,19.64,17.71,29.45
 			c0.15,0.25,0.25,0.53,0.56,1.22c-35.87,0-71.51,0-107.44,0c-0.03-0.58-0.12-1.44-0.12-2.29c-0.01-48.73-0.01-97.47,0-146.2
-			c0-0.81,0.09-1.62,0.14-2.43C132.46,34.21,160.46,34.21,188.46,34.21z"/>
-		<path class="st2" d="M505.74,35.99c-0.49,0.75-1.07,1.45-1.45,2.24c-4.33,8.9-8.62,17.81-12.93,26.71
+			c0-0.81,0.09-1.62,0.14-2.43C132.46,34.21,160.46,34.21,188.46,34.21z" />
+					<!-- Letra S -->
+					<path class="st2" d="M505.74,35.99c-0.49,0.75-1.07,1.45-1.45,2.24c-4.33,8.9-8.62,17.81-12.93,26.71
 			c-0.32,0.67-0.68,1.32-1.24,2.41c-1.13-2.32-2-4.34-3.1-6.24c-0.37-0.64-1.32-1.41-2.01-1.42c-8.56-0.08-17.11-0.04-25.67-0.02
 			c-0.14,0-0.29,0.1-0.67,0.25c0.25,0.57,0.47,1.16,0.77,1.71c14.6,26.21,29.23,52.41,43.76,78.66c0.93,1.69,1.48,3.75,1.5,5.64
 			c0.13,12.27,0.07,24.55,0.07,36.83c0,0.81,0,1.62,0,2.59c-27.81,0-55.5,0-83.31,0c0-13.34,0-26.6,0-40.3
 			c3.32,2.28,6.32,4.42,9.42,6.45c0.86,0.56,1.98,1.12,2.98,1.12c11.36,0.07,22.71,0.04,34.07,0.03c0.24,0,0.47-0.07,1.1-0.16
 			c-0.43-0.92-0.77-1.77-1.21-2.57c-15.12-27.71-30.26-55.4-45.32-83.13c-0.72-1.32-1.09-2.93-1.11-4.41
-			c-0.12-9.39-0.1-18.78-0.12-28.17c28.16,0,56.32,0,84.48,0C505.74,34.8,505.74,35.4,505.74,35.99z"/>
-		<path class="st3" d="M102.06,34.21c0,10.71,0,21.42,0,32.34c-8.82,0-17.42,0-26.34,0c0,39.72,0,79.23,0,118.86
+			c-0.12-9.39-0.1-18.78-0.12-28.17c28.16,0,56.32,0,84.48,0C505.74,34.8,505.74,35.4,505.74,35.99z" />
+					<!-- Letra T1 -->
+					<path class="st3" d="M102.06,34.21c0,10.71,0,21.42,0,32.34c-8.82,0-17.42,0-26.34,0c0,39.72,0,79.23,0,118.86
 			c-11.8,0-23.28,0-35,0c0-39.49,0-78.95,0-118.8c-8.99,0-17.74,0-26.5,0c0-10.8,0-21.6,0-32.4C43.5,34.21,72.78,34.21,102.06,34.21
-			z"/>
-		<path class="st4" d="M277.74,34.21c0,10.71,0,21.42,0,32.35c-8.83,0-17.43,0-26.27,0c0,39.69,0,79.15,0,118.79
+			z" />
+					<!-- Letra T2 -->
+					<path class="st4" d="M277.74,34.21c0,10.71,0,21.42,0,32.35c-8.83,0-17.43,0-26.27,0c0,39.69,0,79.15,0,118.79
 			c-11.79,0-23.33,0-35.13,0c0-39.48,0-78.94,0-118.63c-8.85,0-17.44,0-26.44,0c0-10.99,0-21.75,0-32.51
-			C219.18,34.21,248.46,34.21,277.74,34.21z"/>
-		<path class="st5" d="M419.34,34.21c-0.04,9.67-0.09,19.33-0.13,29c0,0.87,0,1.73,0,2.72c-12.05,0-23.81,0-35.87,0
-			c0-10.65,0-21.19,0-31.72C395.34,34.21,407.34,34.21,419.34,34.21z"/>
-		<path class="st5" d="M419.14,185.32c-1.87,0.52-2.83,0.04-3.63-1.42c-10.44-18.96-20.96-37.88-31.43-56.83
+			C219.18,34.21,248.46,34.21,277.74,34.21z" />
+					<!-- Letra I -->
+					<path class="st5" d="M419.34,34.21c-0.04,9.67-0.09,19.33-0.13,29c0,0.87,0,1.73,0,2.72c-12.05,0-23.81,0-35.87,0
+			c0-10.65,0-21.19,0-31.72C395.34,34.21,407.34,34.21,419.34,34.21z" />
+					<path class="st5" d="M419.14,185.32c-1.87,0.52-2.83,0.04-3.63-1.42c-10.44-18.96-20.96-37.88-31.43-56.83
 			c-0.38-0.7-0.68-1.53-0.68-2.3c-0.03-17.89-0.02-35.79-0.01-53.68c0-0.21,0.07-0.43,0.14-0.87c0.64-0.06,1.31-0.19,1.99-0.19
 			c10.48-0.01,20.95,0.02,31.43-0.04c1.78-0.01,2.31,0.46,2.31,2.13c-0.05,37.27-0.04,74.54-0.04,111.81
-			C419.21,184.36,419.16,184.8,419.14,185.32z"/>
-	</g>
-	<path class="st6" d="M315.8,80.64c-0.2-0.07-0.39-0.14-0.59-0.2c0-7.64,0-15.28,0-23.08"/>
-</g>
-</svg>
+			C419.21,184.36,419.16,184.8,419.14,185.32z" />
+				</g>
+			</g>
+		</svg>
+	</div>
 
-    </div>
+	<!-- Opção Single Player e Multiplayer -->
+	<div class="container" id="buttons" style="margin-left: 480px; margin-top: 50px;">
+		<div class="row" style="margin:auto;">
+			<a href="tetris.html">
+				<svg id="playTxt" width="480" height="80">
+					<text fill="white" font-family="tetris" font-size="60" text-anchor="middle"
+						alignmentbaseline="central" X="50%" Y="70%">
+						SINGLE PLAYER
+					</text>
+				</svg>
+				<svg id="bitGuy" width="80" height="80">
+					<text fill="red" font-family="tetris" font-size="60" text-anchor="middle"
+						alignmentbaseline="central" X="50%" Y="70%">
+						&
+					</text>
+				</svg>
+			</a>
+		</div>
+		<div class="row" style="margin:auto;  margin-top: 50px;">
+			<a href="tetris2.html">
+				<svg id="playTxt" width="450" height="80">
+					<text fill="white" font-family="tetris" font-size="60" text-anchor="middle"
+						alignmentbaseline="central" X="50%" Y="70%">
+						MULTIPLAYER
+					</text>
+				</svg>
+				<svg id="bitGuy" width="90" height="80">
+					<defs>
+						<linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+							<stop offset="55%" style="stop-color:crimson;stop-opacity:1" />
+							<stop offset="55%" style="stop-color:mediumpurple;stop-opacity:1" />
+							<stop offset="100%" style="stop-color:mediumpurple;stop-opacity:1" />
+						</linearGradient>
+					</defs>
+					<text fill="url(#grad3)" font-family="tetris" font-size="60" text-anchor="middle"
+						alignmentbaseline="central" X="50%" Y="70%">
+						& &
+					</text>
+				</svg>
+			</a>
+		</div>
+	</div>
 
-    <div class="container">
-        <div class="row">
+	<!-- Estrelas -->
+	<svg id="backgr" width="100%" height="106%">
+		<defs>
+			<radialGradient id="grad00">
+				<stop offset="0%" style="stop-color:white;stop-opacity:1"/>
+				<stop offset="20%" style="stop-color:white;stop-opacity:1"/>
+				<stop offset="100%" style="stop-color:white;stop-opacity:0"/>
+			</radialGradient>
+		</defs>
+		<circle r="5" cx="800" cy="200" fill="url(#grad00)"/>
+		<circle r="10" cx="120" cy="200" fill="url(#grad00)"/>
+		<circle r="8" cx="200" cy="420" fill="url(#grad00)"/>
+		<circle r="5" cx="600" cy="150" fill="url(#grad00)"/>
+		<circle r="2" cx="140" cy="160" fill="url(#grad00)"/>
+		<circle r="5" cx="300" cy="660" fill="url(#grad00)"/>
+		<circle r="7" cx="520" cy="500" fill="url(#grad00)"/>
+		<circle r="8" cx="600" cy="220" fill="url(#grad00)"/>
+		<circle r="5" cx="350" cy="350" fill="url(#grad00)"/>
+		<circle r="2" cx="240" cy="160" fill="url(#grad00)"/>
+		<circle r="5" cx="900" cy="400" fill="url(#grad00)"/>
+		<circle r="10" cx="1320" cy="200" fill="url(#grad00)"/>
+		<circle r="8" cx="1200" cy="420" fill="url(#grad00)"/>
+		<circle r="5" cx="1300" cy="150" fill="url(#grad00)"/>
+		<circle r="5" cx="1140" cy="160" fill="url(#grad00)"/>
+		<circle r="2" cx="800" cy="660" fill="url(#grad00)"/>
+		<circle r="10" cx="920" cy="500" fill="url(#grad00)"/>
+		<circle r="8" cx="1044" cy="220" fill="url(#grad00)"/>
+		<circle r="2" cx="950" cy="350" fill="url(#grad00)"/>
+		<circle r="5" cx="1240" cy="660" fill="url(#grad00)"/>
+	</svg>
 
-            <div class="col-sm-6" >
-                <a class="option" href="tetris.html">SINGLE PLAYER &</a>
+	<!-- Música de Fundo -->
+	<embed src="./Tetris_Remix _COPYRIGHT_FREE.mp3" autostart="true" loop="true" infnite width="2" height="0"></embed>
+	
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	</script>
+</body>
 
-            </div>
-
-            <div class="col-sm-6 ">
-                <a class="option" href="tetris2.html">MULTIPLAYER & &</a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <h1 id="by">By: Bruno Justa & Nuno Gomes </h1>
-
-    <embed src="./Tetris_Remix _COPYRIGHT_FREE.mp3" autostart="true" loop="true" infnite width="2" height="0">
-    </embed>
-    
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
 </html>
