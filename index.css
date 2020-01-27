@@ -98,7 +98,7 @@ body {
 
 /*Container com as Opções*/
 #buttons {
-  animation: fadeIn 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fadeIn 1.2s both;
   animation-delay: 2.8s;
 }
 
